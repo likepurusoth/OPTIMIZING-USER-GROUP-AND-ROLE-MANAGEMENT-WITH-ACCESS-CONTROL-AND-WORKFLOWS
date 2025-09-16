@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<unload unload_date="2025-09-08 14:00:00">
+
+    <!-- ================= USERS ================= -->
+    <!-- User: Alice -->
+    <sys_user action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <calendar_integration>1</calendar_integration>
+        <edu_status>faculty</edu_status>
+        <email>alice@gmail.com</email>
+        <enable_multifactor_authn>false</enable_multifactor_authn>
+        <federated_id>1wvSQLnJKuPmnqTPgoU38UUnedl5ERw3d6ZnrmOaZ5Y=</federated_id>
+        <first_name>alice</first_name>
+        <last_name>p</last_name>
+        <name>alice p</name>
+        <notification>2</notification>
+        <sys_class_name>sys_user</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 05:52:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5923b73bc36b22100c2c1e0ed40131ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 05:52:40</sys_updated_on>
+        <user_name>alice</user_name>
+        <vip>false</vip>
+        <web_service_access_only>false</web_service_access_only>
+    </sys_user>
+
+    <!-- User: Bob -->
+    <sys_user action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <calendar_integration>1</calendar_integration>
+        <edu_status>faculty</edu_status>
+        <email>bob@gmail.com</email>
+        <enable_multifactor_authn>false</enable_multifactor_authn>
+        <federated_id>mKG+wqpekyx4/xGwrhBM1y87RFIWGdsgwCLrxAWG66c=</federated_id>
+        <first_name>Bob</first_name>
+        <last_name>p</last_name>
+        <name>Bob p</name>
+        <notification>2</notification>
+        <sys_class_name>sys_user</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 05:54:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>11f3f77bc36b22100c2c1e0ed401313e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 05:54:40</sys_updated_on>
+        <user_name>bob</user_name>
+        <vip>false</vip>
+        <web_service_access_only>false</web_service_access_only>
+    </sys_user>
+
+    <!-- ================= GROUPS ================= -->
+    <sys_user_group action="INSERT_OR_UPDATE">
+        <name>project team</name>
+        <active>true</active>
+        <description>Project Team Group</description>
+        <sys_id>22a3b63bc36b22100c2c1e0ed4013200</sys_id>
+        <sys_class_name>sys_user_group</sys_class_name>
+    </sys_user_group>
+
+    <!-- ================= ROLES ================= -->
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <name>project member</name>
+        <sys_id>3356fb3fc36b22100c2c1e0ed401319c</sys_id>
+        <assignable>false</assignable>
+        <grantable>true</grantable>
+        <sys_class_name>sys_user_role</sys_class_name>
+    </sys_user_role>
+
+    <!-- ================= CUSTOM TABLES ================= -->
+    <sys_db_object action="INSERT_OR_UPDATE">
+        <label>Project Table</label>
+        <name>u_project_table</name>
+        <user_role>u_project_table_user</user_role>
+        <read_access>true</read_access>
+        <create_access>false</create_access>
+        <update_access>false</update_access>
+        <delete_access>false</delete_access>
+        <sys_class_name>sys_db_object</sys_class_name>
+    </sys_db_object>
+
+    <sys_db_object action="INSERT_OR_UPDATE">
+        <label>task table 2</label>
+        <name>u_task_table_2</name>
+        <user_role>u_task_table_2_user</user_role>
+        <read_access>true</read_access>
+        <create_access>false</create_access>
+        <update_access>false</update_access>
+        <delete_access>false</delete_access>
+        <sys_class_name>sys_db_object</sys_class_name>
+    </sys_db_object>
+
+    <!-- ================= APPLICATIONS ================= -->
+    <sys_app action="INSERT_OR_UPDATE">
+        <name>project table</name>
+        <title>project table</title>
+        <roles>project member</roles>
+        <category>Custom Applications</category>
+        <active>true</active>
+        <sys_class_name>sys_app</sys_class_name>
+    </sys_app>
+
+    <sys_app action="INSERT_OR_UPDATE">
+        <name>task table 2</name>
+        <title>task table 2</title>
+        <roles>project member, Team member</roles>
+        <category>Custom Applications</category>
+        <active>true</active>
+        <sys_class_name>sys_app</sys_class_name>
+    </sys_app>
+
+    <!-- ================= ACL ================= -->
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <name>u_task_table_2.u_status</name>
+        <operation>write</operation>
+        <type>record</type>
+        <active>true</active>
+        <sys_class_name>sys_security_acl</sys_class_name>
+    </sys_security_acl>
+
+    <!-- ================= APPROVALS ================= -->
+    <sysapproval_approver action="INSERT_OR_UPDATE">
+        <approval_source>ui.desktop</approval_source>
+        <approver display_value="alice p">5923b73bc36b22100c2c1e0ed40131ef</approver>
+        <iteration>1</iteration>
+        <state>approved</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-08 12:25:36</sys_created_on>
+        <sys_id>bc9a1262c33fe2100c2c1e0ed401312c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-08 12:26:30</sys_updated_on>
+        <sysapproval display_value="REQ0000001">6eed229047801200e0ef563dbb9a71c2</sysapproval>
+    </sysapproval_approver>
+
+</unload>
